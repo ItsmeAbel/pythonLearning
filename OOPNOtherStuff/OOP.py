@@ -37,10 +37,12 @@ print(myDog.speak("Ice Cream"))
 #Override - Inherit the attributes from the parent but change the attributes. EX-Inherit blonde hair from birth parents but you dye it black
 
 class Goldenretriever(Dog): #a child class that inherits the Dog parent class
-    pass
+   def test(self, sound):
+    return super().speak(sound) #do this if you want the class to retain the parent class's function. it's useful when you don't wanna override or extend the parent class/function
+
 class Rottweiler(Dog): #we can override a parent class attribute like this
     def speak(self, sound="wuff"):
-        return f"{self.name} barks {sound}"
+        return f"{self.name} says {sound}"
 
 bob = Goldenretriever("bob", 4)
 print(type(bob)) #returns the inhering class
@@ -49,3 +51,5 @@ print(isinstance(bob, Dog)) #isinstance is a built in function that checks if an
 deric = Rottweiler("deric", 8)
 print(deric.speak())
 print(deric.speak("sike"))
+
+print(bob.test("yuff"))
