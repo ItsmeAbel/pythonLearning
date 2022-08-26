@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from Django.FirstTimeDjango import playground
+#from Django.FirstTimeDjango import playground
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), 
+    #to access the admin pannel: 
+    #1st: run python manage.py migrate to create a database for admins
+    #2nd: run python manage.py createsuperuser to create an admin username and password, which will be saved in the database
     path("playground/", include("playground.urls"))
 ]
